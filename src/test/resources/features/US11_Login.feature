@@ -4,7 +4,7 @@ Feature: Login same line
 
   Scenario: Login as librarian same line
     #Given I am on the login page
-    When user login as "librarian2"
+    When I am as user login as "librarian12"
     Then "dashboard" page should be displayed
 
 

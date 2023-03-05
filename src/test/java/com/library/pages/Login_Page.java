@@ -29,8 +29,8 @@ public class Login_Page {
     public void login_librarian(){
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOf(inp_username));
-        inp_username.sendKeys(ConfigurationReader.getProperty("librarian1_username"));
-        inp_password.sendKeys(ConfigurationReader.getProperty("librarian1_password"));
+        inp_username.sendKeys(ConfigurationReader.getProperty("librarian12_username"));
+        inp_password.sendKeys(ConfigurationReader.getProperty("librarian12_password"));
         btn_signIn.click();
     }
 
