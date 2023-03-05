@@ -5,6 +5,10 @@ Feature: Login same line
   Scenario: Login as librarian same line
     #Given I am on the login page
     When I am as user login as "librarian12"
-    Then "dashboard" page should be displayed
+    Then "Dashboard" page should be displayed
 
+  Scenario: Login as student same line
+   # Given I am on the login page
+    When I am as user login as "student"
+    Then "books" page should be displayed
 

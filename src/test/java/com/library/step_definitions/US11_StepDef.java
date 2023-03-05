@@ -1,11 +1,14 @@
 package com.library.step_definitions;
 
+import com.library.pages.Dashboard_Page;
 import com.library.pages.Login_Page;
+import com.library.utilities.BrowserUtils;
 import com.library.utilities.ConfigurationReader;
 import com.library.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 
 public class US11_StepDef {
 
@@ -28,7 +31,15 @@ public class US11_StepDef {
         }
     }
 
+    Dashboard_Page dashboard_page = new Dashboard_Page();
     @Then("{string} page should be displayed")
-    public void pageShouldBeDisplayed(String arg0) {
+    public void page_Should_Be_Displayed(String expectedPage) {
+        BrowserUtils.sleep(2);
+        String actualPage = dashboard_page.dashBoard.getText();
+        String pageUrl= Driver.getDriver().getCurrentUrl();
+        System.out.println("pageUrl = " + pageUrl);
+        // System.out.println(actualPage);
+        //Assert.assertTrue(actualPage.equals(expectedPage));
+
     }
 }
