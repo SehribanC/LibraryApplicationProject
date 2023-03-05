@@ -22,8 +22,8 @@ public class US11_StepDef {
 
     @When("I am as user login as {string}")
     public void user_login_as(String user) {
-        if (user.equals("student2")){
-            loginPage.login_student();
+        if (user.equals("student12")){
+            loginPage.login_student(12);
         } else if (user.equals("librarian12")) {
             loginPage.login_librarian(12);
         }else{
@@ -31,15 +31,25 @@ public class US11_StepDef {
         }
     }
 
-    Dashboard_Page dashboard_page = new Dashboard_Page();
+
+
     @Then("{string} page should be displayed")
     public void page_Should_Be_Displayed(String expectedPage) {
         BrowserUtils.sleep(2);
-        String actualPage = dashboard_page.dashBoard.getText();
         String pageUrl= Driver.getDriver().getCurrentUrl();
-        System.out.println("pageUrl = " + pageUrl);
+       // System.out.println("pageUrl = " + pageUrl);
+
+        Assert.assertTrue(pageUrl.contains(expectedPage));
+    }
+    // ver.2
+    Dashboard_Page dashboard_page = new Dashboard_Page();
+    Books_Page books_page = new Books_Page();
+    @Then("should be displayed {string} page")
+    public void should_Be_Displayed_Page(String expectedPage) {
+        String actualPage = dashboard_page.dashBoard.getText();
         // System.out.println(actualPage);
-        //Assert.assertTrue(actualPage.equals(expectedPage));
+        Assert.assertTrue(actualPage.equals(expectedPage));
+
 
     }
 }
