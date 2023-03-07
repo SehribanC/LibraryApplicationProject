@@ -10,9 +10,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 // page_url = https://library1.cydeo.com/login.html
-public class DashboardUsers_AT {
+public class LibrarianUsersPage {
 
-    public DashboardUsers_AT() {
+    public LibrarianUsersPage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
     
