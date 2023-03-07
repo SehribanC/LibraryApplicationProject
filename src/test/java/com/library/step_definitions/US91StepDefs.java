@@ -1,6 +1,6 @@
 package com.library.step_definitions;
 
-import com.library.pages.DashboardUsers_AT;
+import com.library.pages.LibrarianUsersPage;
 import com.library.utilities.BrowserUtils;
 import com.library.utilities.Driver;
 import io.cucumber.java.en.And;
@@ -12,7 +12,7 @@ import org.junit.Assert;
 import java.util.List;
 
 public class US91StepDefs {
-    DashboardUsers_AT elements=new DashboardUsers_AT();
+    LibrarianUsersPage elements=new LibrarianUsersPage();
     @Given("As a user go to {string} login page.")
     public void asAUserGoToLoginPage(String loginPage) {
         Driver.getDriver().get("https://library1.cydeo.com/login.html");
@@ -29,6 +29,7 @@ public class US91StepDefs {
         elements.buttonSignIn.click();
         BrowserUtils.sleep(2);
     }
+
 
     @When("Librarian on dashboard, click {string} module on top of the page")
     public void librarianOnDashboardClickModuleOnTopOfThePage(String usersModule) {
