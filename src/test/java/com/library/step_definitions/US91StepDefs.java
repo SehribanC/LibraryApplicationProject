@@ -1,6 +1,6 @@
 package com.library.step_definitions;
 
-import com.library.pages.DashboardUsers;
+import com.library.pages.DashboardUsers_AT;
 import com.library.utilities.BrowserUtils;
 import com.library.utilities.Driver;
 import io.cucumber.java.en.And;
@@ -8,14 +8,11 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
 
 public class US91StepDefs {
-    DashboardUsers elements=new DashboardUsers();
+    DashboardUsers_AT elements=new DashboardUsers_AT();
     @Given("As a user go to {string} login page.")
     public void asAUserGoToLoginPage(String loginPage) {
         Driver.getDriver().get("https://library1.cydeo.com/login.html");

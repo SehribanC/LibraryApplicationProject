@@ -1,8 +1,6 @@
 package com.library.pages;
 
-import com.library.utilities.BrowserUtils;
 import com.library.utilities.Driver;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -12,9 +10,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 // page_url = https://library1.cydeo.com/login.html
-public class DashboardUsers {
+public class DashboardUsers_AT {
 
-    public DashboardUsers() {
+    public DashboardUsers_AT() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
     
