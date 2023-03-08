@@ -26,7 +26,7 @@ public abstract class BasePage {
     public WebElement icon_profile;
 
 
-  public void navigate_to_link(String linkName){
+  public  static void navigate_to_link(String linkName){
         String locator ="//span[.='"+linkName+"']";
         WebElement element = Driver.getDriver().findElement(By.xpath(locator));
         element.click();
