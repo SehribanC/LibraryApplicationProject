@@ -14,6 +14,11 @@ import java.time.Duration;
 
 public abstract class BasePage {
 
+
+    //guys feel free to extend this abstract class
+    // feel free to add more functionalities !!
+
+
     public BasePage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
@@ -26,7 +31,7 @@ public abstract class BasePage {
     public WebElement icon_profile;
 
 
-  public void navigate_to_link(String linkName){
+  public static void navigate_to_link(String linkName){
         String locator ="//span[.='"+linkName+"']";
         WebElement element = Driver.getDriver().findElement(By.xpath(locator));
         element.click();
