@@ -43,6 +43,12 @@ public class US97StepDefs {
     }
     @Then("table should contain this data")
     public void table_should_contain_this_data(Map<String, String> tableData) {
+        String actualUserID = elements.userID_FirstRow.getText();
+        String actualFullName = elements.fullName_FirstRow.getText();
+        String actualEmail = elements.email_FirstRow.getText();
 
+        Assert.assertEquals(tableData.get("User ID"), actualUserID);
+        Assert.assertEquals(tableData.get("Full Name"), actualFullName);
+        Assert.assertEquals(tableData.get("Email"), actualEmail);
     }
 }

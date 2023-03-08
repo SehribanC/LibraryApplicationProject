@@ -8,10 +8,10 @@ Feature: search new users dialog
       | password | libraryUser         |
 
     And I click on "User" link
-    When I search for "486"
+    When I search for "10256"
     Then table should contain this data
 
-      | User ID   | 486                             |
-      | Full Name | Asuncion Pfeffer                |
-      | Email     | Oralia Daugherty234@library.com |
+      | User ID   | 10256            |
+      | Full Name | Ali              |
+      | Email     | user77@gmail.com |
 
