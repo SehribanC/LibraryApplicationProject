@@ -1,13 +1,13 @@
 node {
     stage('Clone code') {
-        git 'https://github.com/SehribanC/LibraryApplicationProject/tree/US91_AT.git'
+        git 'https://github.com/mehmetCt/demo-project.git'
     }
 
     stage('Run tests'){
         if(isUnix()){
             sh "mvn clean test"
         } else {
-            bat "mvn clean test -Dcucumber.filter.tags=\"@B28G1-110\" "
+            bat "mvn clean test -Dcucumber.filter.tags=\"@regression\" "
         }
 
     }
