@@ -43,6 +43,12 @@ public class DashboardUsers_AT {
         return list;
     }
 
+    @FindBy(xpath = "//input[@type='search']")
+    public WebElement inputSearchField;
+
+    @FindBy(xpath = "//h3[text()='User Management']")
+    public WebElement headerUserManagement;
+
 
 
 
