@@ -8,6 +8,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,6 +38,22 @@ public class LibrarianUsersPage {
         Select select=new Select(recordsCheckbox);
         return select;
     }
+
+    @FindBy(xpath = "//input[@type='search']")
+    public WebElement inputSearchField;
+
+    @FindBy(xpath = "//h3[text()='User Management']")
+    public WebElement headerUserManagement;
+
+    @FindBy(xpath = "//table[@id='tbl_users']/tbody/tr[1]/td[2]")
+    public WebElement userID_FirstRow;
+
+    @FindBy(xpath = "//table[@id='tbl_users']/tbody/tr[1]/td[3]")
+    public WebElement fullName_FirstRow;
+
+    @FindBy(xpath = "//table[@id='tbl_users']/tbody/tr[1]/td[4]")
+    public WebElement email_FirstRow;
+
     public List<Integer> recordsOptions(){
         List<Integer> list=new ArrayList<>();
         for (WebElement eachOption : checkbox().getOptions()) {
@@ -57,6 +74,7 @@ public class LibrarianUsersPage {
 
         Select select = new Select(recordsCheckbox);
         Assert.assertTrue(select.getFirstSelectedOption().getText().equals(str));
+
     }
 
     public void numberOfDisplayedRows(int numberOfDisplayedUsers){
@@ -69,12 +87,6 @@ public class LibrarianUsersPage {
 
     @FindBy(xpath = "//h3[.='User Management']")
     public WebElement userManagementH3;
-
-
-
-
-
-
 
 
 
