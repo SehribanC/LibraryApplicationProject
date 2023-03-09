@@ -1,6 +1,6 @@
 package com.library.step_definitions;
 
-import com.library.pages.DashboardUsers_AT;
+import com.library.pages.LibrarianUsersPage;
 import com.library.pages.BasePage;
 import com.library.utilities.BrowserUtils;
 import com.library.utilities.Driver;
@@ -13,12 +13,12 @@ import java.util.Map;
 
 public class US97StepDefs {
 
-    DashboardUsers_AT elements = new DashboardUsers_AT();
+    LibrarianUsersPage elements = new LibrarianUsersPage();
 
 
 
-    @Given("I am on the login page")
-    public void i_am_on_the_login_page() {
+    @Given("I am on the login page here")
+    public void i_am_on_the_login_page_here() {
         Driver.getDriver().get("https://library1.cydeo.com/login.html");
         Assert.assertTrue(Driver.getDriver().getTitle().contains("Login"));
         BrowserUtils.sleep(2);
@@ -32,8 +32,8 @@ public class US97StepDefs {
         elements.buttonSignIn.click();
         BrowserUtils.sleep(2);
     }
-    @Given("I click on {string} link")
-    public void i_click_on_link(String userModule) {
+    @Given("I click on {string} link now")
+    public void i_click_on_link_now(String userModule) {
         elements.usersModule.click();
         Assert.assertTrue(elements.headerUserManagement.getText().contains(userModule));
     }
