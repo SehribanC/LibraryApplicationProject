@@ -43,21 +43,6 @@ public class DashboardUsers_AT {
         return list;
     }
 
-    @FindBy(xpath = "//input[@type='search']")
-    public WebElement inputSearchField;
-
-    @FindBy(xpath = "//h3[text()='User Management']")
-    public WebElement headerUserManagement;
-
-    @FindBy(xpath = "//table[@id='tbl_users']/tbody/tr[1]/td[2]")
-    public WebElement userID_FirstRow;
-
-    @FindBy(xpath = "//table[@id='tbl_users']/tbody/tr[1]/td[3]")
-    public WebElement fullName_FirstRow;
-
-    @FindBy(xpath = "//table[@id='tbl_users']/tbody/tr[1]/td[4]")
-    public WebElement email_FirstRow;
-
 
 
 
