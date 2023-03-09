@@ -1,6 +1,8 @@
 package com.library.pages;
 
 import com.library.utilities.Driver;
+import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -42,6 +44,37 @@ public class LibrarianUsersPage {
         }
         return list;
     }
+
+    public void selectByVisibleText(int num){
+        Select select= new Select(recordsCheckbox);
+
+        String strNum= Integer.toString(num);
+        select.selectByVisibleText(strNum);
+    }
+
+    public void verifyTheSelectedNumberIsDisplayed(int selectedOption){
+        String str = Integer.toString(selectedOption);
+
+        Select select = new Select(recordsCheckbox);
+        Assert.assertTrue(select.getFirstSelectedOption().getText().equals(str));
+    }
+
+    public void numberOfDisplayedRows(int numberOfDisplayedUsers){
+        String locator= "//table[@id='tbl_users']//tbody//tr";
+        List<WebElement> listOfDisplayed = Driver.getDriver().findElements(By.xpath(locator));
+
+        Assert.assertTrue(numberOfDisplayedUsers==listOfDisplayed.size());
+    }
+
+
+    @FindBy(xpath = "//h3[.='User Management']")
+    public WebElement userManagementH3;
+
+
+
+
+
+
 
 
 
