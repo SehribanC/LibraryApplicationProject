@@ -3,12 +3,14 @@ package com.library.step_definitions;
 import com.library.pages.BasePage;
 import com.library.pages.BookManagementPage_JY;
 import com.library.pages.Login_Page;
+import com.library.utilities.BrowserUtils;
 import com.library.utilities.ConfigurationReader;
 import com.library.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.support.ui.Select;
 
 public class US93_StepDefs {
 
@@ -28,17 +30,23 @@ public class US93_StepDefs {
     public void i_click_on_link(String pageName) {
     BasePage.navigate_to_link(pageName);
     }
-    @When("I select Show {int} records")
-    public void i_select_show_records(Integer count) {
-    jy.clickCount(count);
+
+    @When("I select Show {string} records")
+    public void i_select_show_records(String count) {
+        BrowserUtils.sleep(3);
+        jy.clickDropDowns(count);
     }
-    @Then("show records value should be {int}")
-    public void show_records_value_should_be(Integer count) {
-        Assert.assertEquals(jy.btn_dropDown.getText(), count.toString());
+
+    @Then("show records value should be {string}")
+    public void show_records_value_should_be(String count) {
+        Select select = new Select(jy.btn_dropDown);
+        BrowserUtils.sleep(3);
+       Assert.assertEquals(select.getFirstSelectedOption().getText(),count);
     }
-    @Then("the users table must display {int} records")
-    public void the_users_table_must_display_records(Integer count) {
-        Assert.assertEquals(jy.rows.size(), (int) count);
+
+    @Then("the users table must display {string} records")
+    public void the_users_table_must_display_records(String count) {
+        jy.verifyTableNumSameCountNum(count);
     }
 
 }
