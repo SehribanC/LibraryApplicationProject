@@ -1,6 +1,6 @@
 node {
     stage('Clone code') {
-        git 'https://github.com/SehribanC/LibraryApplicationProject.git'
+        git 'https://github.com/SehribanC/LibraryApplicationProject/tree/US91_AT.git'
     }
 
     stage('Run tests'){
