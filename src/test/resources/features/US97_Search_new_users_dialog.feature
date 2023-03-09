@@ -7,7 +7,7 @@ Feature: search new users dialog
       | email    | librarian21@library |
       | password | libraryUser         |
 
-    And I click on "User" link now
+   And I click on "Users" link now
     When I search for "10256"
     Then table should contain this data
 
