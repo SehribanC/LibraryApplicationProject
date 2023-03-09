@@ -18,15 +18,15 @@ public class US93_StepDefs {
     BookManagementPage_JY jy = new BookManagementPage_JY();
 
 
-    @Given("I am on the login page")
-    public void i_am_on_the_login_page() {
+    @Given("I am on the login page now")
+    public void i_am_on_the_login_page_now() {
         Driver.getDriver().get(ConfigurationReader.getProperty("library_url"));
     }
-    @Given("I login as a librarian")
+    @Given("I login as a librarian now")
     public void i_login_as_a_librarian() {
         page.login_librarian();
     }
-    @Given("I click on {string} link")
+    @Given("I click on {string} link now")
     public void i_click_on_link(String pageName) {
     BasePage.navigate_to_link(pageName);
     }
