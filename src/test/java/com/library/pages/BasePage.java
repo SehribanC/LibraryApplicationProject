@@ -25,6 +25,9 @@ public abstract class BasePage {
     @FindBy(xpath = "//span[.='Test Librarian 11']")
     public WebElement icon_profile;
 
+    @FindBy(xpath= "(//div[@class='row'])[1]")
+    public WebElement threeIcons;
+
 
   public  static void navigate_to_link(String linkName){
         String locator ="//span[.='"+linkName+"']";
