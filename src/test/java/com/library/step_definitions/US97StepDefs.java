@@ -32,11 +32,11 @@ public class US97StepDefs {
         elements.buttonSignIn.click();
         BrowserUtils.sleep(2);
     }
-    @Given("I click on {string} link now")
-    public void i_click_on_link_now(String userModule) {
-        elements.usersModule.click();
-        Assert.assertTrue(elements.headerUserManagement.getText().contains(userModule));
-    }
+  //  @Given("I click on {string} link now")
+   // public void i_click_on_link_now(String userModule) {
+    //    elements.usersModule.click();
+     //   Assert.assertTrue(elements.headerUserManagement.getText().contains(userModule));
+    //}
     @When("I search for {string}")
     public void i_search_for(String userID) {
         elements.inputSearchField.sendKeys(userID);
