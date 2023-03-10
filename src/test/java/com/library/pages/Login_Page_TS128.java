@@ -61,6 +61,15 @@ public class Login_Page_TS128 {
         btn_signIn.click();
 
     }
+    public void login_any_user(String user, String num){
+        String username_credential = user + num + "_username";
+        String password_credential = user + num + "_password";
+
+        inp_username.sendKeys(ConfigurationReader.getProperty(username_credential));
+        inp_password.sendKeys(ConfigurationReader.getProperty(password_credential));
+        btn_signIn.click();
+
+    }
 
 
 }

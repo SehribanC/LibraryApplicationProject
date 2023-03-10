@@ -33,6 +33,9 @@ public abstract class BasePage {
     @FindBy(xpath= "(//div[@class='row'])[1]")
     public WebElement threeIcons;
 
+    @FindBy(xpath = "//*[.='Dashboard']")
+    public WebElement dashBoard;
+
 
     public static void navigate_to_link(String linkName){
         String locator ="//span[.='"+linkName+"']";
