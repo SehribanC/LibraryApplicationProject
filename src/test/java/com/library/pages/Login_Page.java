@@ -43,12 +43,12 @@ public class Login_Page {
     }
 
     public void login_student(int num){
-        String username_credential = "student" + num + "_username";
-        String password_credential = "student" + num + "_password";
+       String username_credential = "student" + num + "_username";
+       String password_credential = "student" + num + "_password";
 
-        inp_username.sendKeys(ConfigurationReader.getProperty(username_credential));
-        inp_password.sendKeys(ConfigurationReader.getProperty(password_credential));
-        btn_signIn.click();
+       inp_username.sendKeys(ConfigurationReader.getProperty(username_credential));
+       inp_password.sendKeys(ConfigurationReader.getProperty(password_credential));
+       btn_signIn.click();
 
     }
 
@@ -60,6 +60,7 @@ public class Login_Page {
         inp_password.sendKeys(ConfigurationReader.getProperty(password_credential));
         btn_signIn.click();
     }
+
 
 
 }
