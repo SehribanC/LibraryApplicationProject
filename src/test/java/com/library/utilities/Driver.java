@@ -21,16 +21,6 @@ public class Driver {
             browserType=browserType.toLowerCase().trim();
 
             switch (browserType){
-                /*
-                case "chrome":
-                    ChromeOptions options = new ChromeOptions();
-                    options.addArguments("--remote-allow-origins=*");
-                    driverPool.set(new ChromeDriver(options));
-                    driverPool.get().manage().window().maximize();
-                    driverPool.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-                    break;
-                 */
-
                 case "chrome":
                     ChromeOptions options = new ChromeOptions();
                     options.addArguments("--remote-allow-origins=*");
