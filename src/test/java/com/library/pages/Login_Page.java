@@ -59,6 +59,7 @@ public class Login_Page {
         inp_username.sendKeys(ConfigurationReader.getProperty(username_credential));
         inp_password.sendKeys(ConfigurationReader.getProperty(password_credential));
         btn_signIn.click();
+
     }
 
 
