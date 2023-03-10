@@ -15,8 +15,9 @@ public class LibrarianUsersPage {
     public LibrarianUsersPage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
-    
 
+    @FindBy(xpath = "//ul[2]/li/a/span")
+    public WebElement valid_user;
     @FindBy(xpath = "//button[@class='btn btn-lg btn-primary btn-block']")
     public WebElement buttonSignIn;
 
