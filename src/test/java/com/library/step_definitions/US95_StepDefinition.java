@@ -15,12 +15,14 @@ public class US95_StepDefinition {
 
     LibrarianUsersPage element = new LibrarianUsersPage();
 
-
+/*
     @Given("User is on the login page")
     public void user_is_on_the_login_page() {
         Driver.getDriver().get(ConfigurationReader.getProperty("library_url"));
 
     }
+
+ */
 
 
     @When("User login {string} and {string}")
