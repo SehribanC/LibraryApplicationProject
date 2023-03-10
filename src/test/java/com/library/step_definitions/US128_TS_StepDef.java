@@ -1,5 +1,6 @@
 package com.library.step_definitions;
 
+import com.library.pages.Books_Page;
 import com.library.pages.Dashboard_Page;
 import com.library.pages.Login_Page;
 import com.library.utilities.BrowserUtils;
@@ -10,7 +11,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 
-public class US11_StepDef {
+public class US128_TS_StepDef {
 
     Login_Page loginPage = new Login_Page();
 
@@ -46,9 +47,16 @@ public class US11_StepDef {
     Books_Page books_page = new Books_Page();
     @Then("should be displayed {string} page")
     public void should_Be_Displayed_Page(String expectedPage) {
-        String actualPage = dashboard_page.dashBoard.getText();
+        String actualPage="";
+        if (expectedPage.equals("dashboard")){
+             actualPage = dashboard_page.dashBoard.getText();
+            Assert.assertTrue(actualPage.equalsIgnoreCase(expectedPage));
+
+        } else if (expectedPage.equals("books")) {
+            books_page.books.getText().equalsIgnoreCase("book management");
+        }else System.out.println("Invalid page");
+
         // System.out.println(actualPage);
-        Assert.assertTrue(actualPage.equals(expectedPage));
 
 
     }
