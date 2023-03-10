@@ -1,9 +1,6 @@
 package com.library.step_definitions;
 
-import com.library.pages.Books_Page;
-import com.library.pages.Dashboard_Page;
-import com.library.pages.Login_Page;
-import com.library.pages.Login_Page_TS128;
+import com.library.pages.*;
 import com.library.utilities.BrowserUtils;
 import com.library.utilities.ConfigurationReader;
 import com.library.utilities.Driver;
@@ -11,8 +8,11 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.WebElement;
 
 public class US128_TS_StepDef {
+
+
 
     Login_Page_TS128 loginPage = new Login_Page_TS128();
 
@@ -44,6 +44,7 @@ public class US128_TS_StepDef {
         Assert.assertTrue(pageUrl.contains(expectedPage));
     }
     // ver.2
+
     Dashboard_Page dashboard_page = new Dashboard_Page();
     Books_Page books_page = new Books_Page();
     @Then("should be displayed {string} page")
@@ -59,6 +60,12 @@ public class US128_TS_StepDef {
 
         // System.out.println(actualPage);
 
+
+    }
+
+    @When("I am as user login as {string} {string}")
+    public void i_Am_As_User_Login_As(String user, String num) {
+        loginPage.login_any_user(user,num);
 
     }
 }
