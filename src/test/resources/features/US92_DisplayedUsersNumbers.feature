@@ -1,4 +1,4 @@
-@US00_MSTF
+@US00_MSTF @smoke
 Feature: manage user info table
 
 
